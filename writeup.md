@@ -36,7 +36,7 @@ The goals / steps of this project are the following:
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first anc second code cell of the IPython notebook located in "./Advanced Lane Detection.ipynb".
+The code for this step is contained in the first and second code cell of the IPython notebook located in "./Advanced Lane Detection.ipynb".
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image with 9x6 size.  Thus, `objp` is just a replicated array of coordinates, and `object_points` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image. A number of images of a chessboard, taken from different angles with the same camera, comprise the input. Using `cv2.findChessboardCorners()` function with grayscaled images, `image_points` are detected and will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. The below images depict the corners drawn onto twenty chessboard images using `cv2.drawChessboardCorners()` function.
 
@@ -62,7 +62,7 @@ I applied the calibration matrix and distortion coefficient, which were got from
         return undistorted_image
 ```
 
-The result seems subtle, but it can be be perceived from the difference in shape of the animal warning traffic sign. The traffic sign in the undistorted image looks more like front view perspective.
+The resulting output seems subtle, but it can be be perceived from the difference in shape of the animal warning traffic sign and the hood of the car at the bottom of the image. The traffic sign in the undistorted image looks more like front view perspective.
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
@@ -192,7 +192,7 @@ I implemented the last step in the `draw_lane` function of the notebook. A polyg
 
 #### 1. Provide a link to your final video output. Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./processed_video.mp4)
+Here's a [link to my video result](./project_video_output.mp4)
 
 ---
 
